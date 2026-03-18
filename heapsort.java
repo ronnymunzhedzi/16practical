@@ -50,7 +50,14 @@ public class heapsort {
     System.out.println(" Time :" + ( end - start ) / 1000.0 + " µs");
     Node[] topDownCopy = nodes.clone();
     start = System.nanoTime();
-    heapsortTopDown(
+    heapsortTopDown(topDownCopy);
+    end = System.nanoTime();
+    System.out.println("\nTop-down heapsort result:");
+        printArray(topDownCopy);
+        System.out.println("Time: " + (end - start) / 1000.0 + " µs");
+    }
+  
+    
     
     
     
