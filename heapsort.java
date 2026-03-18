@@ -28,6 +28,33 @@ public class heapsort {
     testWithSmallSample();
     runTimingComparison(WordList);
   }
+  private static void testWithSmallSample() {
+    System.out.println("\n---TESTING WITH SMALL SAMPLE ---");
+    String[] sampleWords= {
+      "the","quick", "brown" ,"fox", "jumps" ,"over",
+      "the", "lazy" , "dog" , "hello", "world" ," algorithm",
+      "heap" , "sort", "binary" , "tree" , "arrary" , "list" 
+    };
+    Node[] nodes = new Node [sampleWords.length];
+    for (int i =0; i<sampleWords.length ;i++) {
+      nodes [i] = new Node ( sampleWords[i]);
+    }
+    System.out.println("original array ( " + nodes.length + "words):");
+    printArray(nodes);
+    Node [] bottomUpCopy = nodes .clone();
+    long start = System.nanoTime();
+    heapsortBottomUp(bottomUpCopy);
+    long end = System .nanoTime();
+    System.out.println ( "\nBottom-up heapsort rresult :");
+    printArray(bottomUpCopy);
+    System.out.println(" Time :" + ( end - start ) / 1000.0 + " µs");
+    Node[] topDownCopy = nodes.clone();
+    start = System.nanoTime();
+    heapsortTopDown(
+    
+    
+    
+      
   
     
     
