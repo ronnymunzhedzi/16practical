@@ -179,6 +179,43 @@ public class heapsort {
         int largest = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;
+       if (left < n && array[left].compareTo(array[largest]) > 0) {
+            largest = left;
+        }
+      if (right < n && array[right].compareTo(array[largest]) > 0) {
+            largest = right;
+        }
+      if (largest != i) {
+            swap(array, i, largest);
+            heapifyDown(array, n, largest);
+        }
+    }
+  private static void swap(Node[] array, int i, int j) {
+        Node temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+  private static void swap(Node[] array, int i, int j) {
+        Node temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+   private static boolean isSorted(Node[] array) {
+        for (int i = 1; i < array.length; i++) {
+            if (array[i-1].compareTo(array[i]) > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+  
+  
+  
+      
+      
+      
   
   
   
